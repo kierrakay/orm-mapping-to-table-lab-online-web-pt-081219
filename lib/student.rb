@@ -39,7 +39,8 @@ class Student
     VALUES (?, ?)
     SQL
     DB[:conn].execute(sql,self.name, self.grade) #this creates the entry
-   @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students").first.first  #calls id for the last entry
+   @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students").first.first #calls id for the last entry
+   #binding.pry
   #or @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students") [0][0] calling thefirat element in an array thats in an array. thats just how the database returned.
 end
 
